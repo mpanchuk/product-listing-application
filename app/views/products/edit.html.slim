@@ -1,0 +1,18 @@
+h3 Edit product
+.edit-form
+  = form_for @product do |f|
+    ul.errors
+      - @product.errors.full_messages.each do |e|
+        li= e 
+    .form-group
+      = f.label :name
+      = f.text_field :name, class: "form-control"
+    .form-group
+      = f.label :price
+      = f.text_field :price, class: "form-control"
+    .form-group
+      = f.label :description
+      = f.text_area :description, class: "form-control"
+    .form-group
+      = f.submit "Save Product", class: "btn btn-success"
+      = link_to "Cancel", products_path, class: "btn btn-danger"

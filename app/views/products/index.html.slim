@@ -1,0 +1,30 @@
+= link_to "Add new product", "#", class: "btn btn-success add-product"
+.product-form
+  h3 New product
+  = form_for @product do |f|
+    ul.errors
+      - @product.errors.full_messages.each do |e|
+        li= e 
+    .form-group
+      = f.label :name
+      = f.text_field :name, class: "form-control"
+    .form-group
+      = f.label :price
+      = f.text_field :price, class: "form-control"
+    .form-group
+      = f.label :description
+      = f.text_area :description, class: "form-control"
+    .form-group
+      = f.submit "Save Product", class: "btn btn-success"
+      = link_to "Cancel", "#", class: "btn btn-danger cancel-form"
+hr
+table.table.table-striped
+  thead
+    tr
+      th Name
+      th Price
+      th Description
+      th Action
+  tbody
+    = render @products
+= will_paginate @products

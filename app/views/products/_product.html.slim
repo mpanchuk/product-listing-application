@@ -1,0 +1,7 @@
+tr
+  td= product.name
+  td= product.price
+  td= product.description
+  td
+    = link_to "Edit", edit_product_path(product), class: "btn btn-info"
+    = link_to "Remove", product_path(product), class: "btn btn-danger", method: :delete
