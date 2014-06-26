@@ -12,3 +12,7 @@ gem 'spring',        group: :development
 gem 'slim-rails'
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'will_paginate'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0'
+end
